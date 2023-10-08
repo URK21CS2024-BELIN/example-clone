@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="task">
+    <div class="title_container">
+    <h3>
+      {{ task.title }}
+    </h3>
+      <h3 style="color: rgb(163, 6, 6);" *ngIf="task.datetime_created > task.datetime_due">past due date</h3>
+    </div>
+    <p>{{task.descrip}}</p>
+    <div class="button_container">
+        <button class="button" (click)="onUpdate(task)">Edit</button>
+        <button class="button" style="background-color: green;" (click)="onComplete(task)" *ngIf="task.stat !='complete'"><i class="fa fa-check"></i></button>
+        <button class="button" style="background-color: red;" (click)="onDelete(task.id)"><i class="fa fa-trash"></i></button>
+    </div>
+      <div>
+  </div>

@@ -1,0 +1,58 @@
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .input_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .date_input{
+    border: 1px solid #eee;
+    /* background-color: #fafafa; */
+    height: 10px;
+    width: 400px;
+    margin: 0 8px 16px;
+    padding: 16px;
+  }
+
+  .input_box {
+    /* fill: #000000;
+    color: black; */
+    all: unset;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    /* background-color: #000000; */
+    height: 10px;
+    width: 400px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .input_box_big {
+    fill: #888;
+    all: unset;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    /* background-color: #fafafa; */
+    height: 50px;
+    width: 400px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }

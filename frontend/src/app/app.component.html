@@ -1,0 +1,60 @@
+<div class="toolbar" role="banner">
+  <span style="padding: 20px;">TODO LIST</span>
+</div>
+
+<div class="content" role="main">
+
+  <h2>CREATE A TASK</h2>
+  <div class="input-container">
+    <div class="input_div">
+    <h3>Title: </h3>
+    <input class="input_box" type="text" [(ngModel)]="title">
+  </div>
+  <div class="input_div">
+    <h3>Description: </h3>
+    <textarea class="input_box_big" rows="4" cols="50" [(ngModel)]="descrip"></textarea>
+  </div>
+  <div class="input_div">
+    <h3>Due Date: </h3>
+    <input class="date_input" type="datetime-local" id="dueDate" [(ngModel)]="datetime_due">
+    <script>
+        const currentDatetime = new Date().toISOString().slice(0, 16);
+        document.getElementById("dueDate").min = currentDatetime;
+    </script>
+  </div>
+  <button class="card highlight-card card-small" (click)="onAdd()">Add Task</button>
+  </div>
+<div class="list_container">
+<div>
+  <h2>PENDING TASKS</h2>
+
+  <div class="input-container">
+    <app-each-task *ngFor="let task of tasks" [task]="task"></app-each-task>
+  </div>
+</div>
+<div>
+  <h2>COMPLETED TASKS</h2>
+  <div class="input-container">
+    <app-each-task *ngFor="let completed of completeds" [task]="completed"></app-each-task>
+  </div>
+</div>
+</div>
+
+    
+
+  <footer>
+      Love My Project?&nbsp;
+      <a href="https://github.com/ronmcrea/To-Do-App-using-AngularJs-NodeJs-MySQL" target="_blank" rel="noopener"> Give my repo a star.
+        <div class="github-star-badge">
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          Star
+        </div>
+      </a>
+      <a href="https://github.com/ronmcrea/To-Do-App-using-AngularJs-NodeJs-MySQL" target="_blank" rel="noopener">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#1976d2"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+      </a>
+  </footer>
+
+</div>
+
+<router-outlet></router-outlet>

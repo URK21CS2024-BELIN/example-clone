@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Todo List</h1>
+<div mat-dialog-content>
+  <div class="input-container">
+    <div class="input_div">
+    <h3>Title: </h3>
+    <input class="input_box" type="text" [(ngModel)]="title">
+  </div>
+  <div class="input_div">
+    <h3>Description: </h3>
+    <textarea class="input_box_big" rows="4" cols="50" [(ngModel)]="descrip"></textarea>
+  </div>
+  <div class="input_div">
+    <h3>Due Date: </h3>
+    <input class="date_input" type="datetime-local" id="dueDate" [(ngModel)]="datetime_due">
+    <script>
+        const currentDatetime = new Date().toISOString().slice(0, 16);
+        document.getElementById("dueDate").min = currentDatetime;
+    </script>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close class="btn" (click)="refPage()">Save</button>
+</div>
